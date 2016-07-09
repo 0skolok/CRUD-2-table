@@ -75,8 +75,9 @@ class Student extends Controller
     {
         $this->table = $this->model($this->name);
         echo "В процессе";
-        if ($id = trim($_POST['id']) && $_POST['name'] && $_POST['date'] && $_POST['id_group'])
+        if ($_POST['id'] && $_POST['name'] && $_POST['date'] && $_POST['id_group'])
         {
+            $id = trim($_POST['id']);
             $name = trim($_POST['name']);
             $date = trim($_POST['date']);
             $id_group = trim($_POST['id_group']);

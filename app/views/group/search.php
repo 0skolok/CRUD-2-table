@@ -50,7 +50,7 @@
                         </td>
 
                         <td>
-                            ".$student['date']."
+                            ".date('d.m.Y', strtotime($student['date']))."
                         </td>
                     </tr>";
         };

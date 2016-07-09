@@ -21,7 +21,7 @@ else
 
 ?>
     <!-- Форма добавления группы -->
-    <form action='<? echo $this->config->base_url_directory() ?>group/create' method='post'>
+    <form name="cform" action="#">
         <h3 align='center'>Добавить новую группу</h3>
         <table class="table-bordered table-condensed" border='1' align="center">
             <tr>
@@ -29,12 +29,12 @@ else
                     Название
                 </td>
                 <td>
-                    <input class='form-control' name='name'></input>
+                    <input id="name" class='form-control' name='name' value=""></input>
                 </td>
             </tr>
             <tr>
                 <td align="center" colspan='2'>
-                    <input class='btn btn-success btn-sm' type='submit' value="Добавить группу">
+                    <a href="" class="btn btn-success btn-sm crtGr">Добавить группу</a>
                 </td>
             </tr>
         </table>
@@ -44,6 +44,9 @@ else
     <!-- Таблица для вывода групп -->
     <table class="table table-bordered table-condensed table-hover" border='1' align='center'>
         <tr>
+            <td>
+                №
+            </td>
             <td>
                 Название
             </td>
@@ -60,9 +63,15 @@ else
         <br><br>
         <h3 align='center'>Управление группами</h3>
         <?
+        $init = 0;
         foreach ($data['group'] as $group){
+            $init++;
             echo "
-                    <tr>
+                    <tr id='med_{$group['id']}'>
+
+                    <td>
+                        {$init}
+                    </td>
 
                     <td>
                         <a href='{$this->config->base_url_directory()}group/search?id={$group['id']}'>" .$group['name']."</a>
@@ -82,10 +91,9 @@ else
                     <!-- Конец формы -->
 
                     <!-- Форма удаления записи --->
-                    <form action='{$this->config->base_url_directory()}group/delete' method='post'>
+                    <form>
                         <td class='align-btn'>
-                            <input name='id' type='hidden' value=" .$group['id'].">
-                            <input class='btn btn-danger btn-sm' width type='submit' value='Удалить'>
+                            <a href='' id='delbt-{$group['id']}' class='btn btn-danger btn-sm delGr'>Удалить</a>
                         </td>
                     </form>
                     <!-- Конец формы -->

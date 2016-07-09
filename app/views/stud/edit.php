@@ -22,7 +22,7 @@
     ?>
     <br>
     <!-- Форма изменения данных студента -->
-    <form action='<? echo $this->config->base_url_directory() ?>student/edit' method='post'>
+    <form name="cform">
         <table class="table-bordered table-condensed" border='1' align="center">
             <?
             //While начало
@@ -30,21 +30,21 @@
                     echo "
                                 <tr>
                                     <td>
-                                        ФИО студента
+                                        ФИО
                                     </td>
                                     <td>
-                                         <input class='form-control' name='name' value='{$student['name']}'></input>
+                                         <input id='name' class='form-control' name='name' value='{$student['name']}'></input>
                                     </td>
                                 </tr>
 
-                                <input class='form-control' type='hidden' name='date' value='{$student['date']}'></input>
+                                <input id='date' class='form-control' type='hidden' name='date' value='{$student['date']}'></input>
 
                                 <tr>
                                     <td>
                                         Группа
                                     </td>
                                     <td>
-                                        <select class='form-control' name='id_group'>
+                                        <select id='id_group' class='form-control' name='id_group'>
                      ";
 
 
@@ -61,8 +61,8 @@
                             </tr>
                             <tr>
                                 <td align='center' colspan='2'>
-                                    <input name='id' type='hidden' value='{$student['id']}'>
-                                    <input class='btn btn-success btn-sm' type='submit' value='Сохранить'>
+                                    <input id='id' name='id' type='hidden' value='{$student['id']}'>
+                                    <a href='' class='btn btn-success btn-sm chanStud'>Сохранить</a>
                                 </td>
                             </tr>
                     ";

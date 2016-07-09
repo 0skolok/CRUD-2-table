@@ -53,33 +53,29 @@ class Group extends Controller
         {
             $name = trim($_POST['name']);
             $this->table->create_entry($name);
-            echo "Выполнено";
         }
     }
 
     public function delete()
     {
         $this->table = $this->model($this->name);
-        echo "В процессе";
-        if ($id = trim($_POST['id']))
+        if ($_POST['recordToDelete'])
         {
+            $id = filter_var($_POST["recordToDelete"], FILTER_SANITIZE_NUMBER_INT);
             $this->table->delete_entry($id);
-            echo "Выполнено";
         }
-        //return Redirect::action('asdasd');
     }
 
     public function edit()
     {
         $this->table = $this->model($this->name);
-        echo "В процессе";
-        if ($id = trim($_POST['id']) && $_POST['name'] && $_POST['date'])
+        if ($_POST['id'] && $_POST['name'] && $_POST['date'])
         {
+            $id = trim($_POST['id']);
             $name = trim($_POST['name']);
             $date = trim($_POST['date']);
 
             $this->table->edit_entry($id, $name, $date);
-            echo "Выполнено";
         }
         //return Redirect::action('asdasd');
     }

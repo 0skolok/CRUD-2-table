@@ -22,7 +22,7 @@
     ?>
     <br>
     <!-- Форма изменения данных группы -->
-    <form action='<? echo $this->config->base_url_directory() ?>group/edit' method='post'>
+    <form name="cform">
         <table class="table-bordered table-condensed"  border='1' align="center">
             <?
             //While начало
@@ -34,16 +34,16 @@
                                             Название
                                         </td>
                                         <td>
-                                             <input class='form-control'  name='name' value='{$group['name']}'></input>
+                                             <input id='name' class='form-control'  name='name' value='{$group['name']}'></input>
                                         </td>
                                     </tr>
 
-                                    <input type='hidden' name='date' value='{$group['date']}'></input>
+                                    <input id='date' type='hidden' name='date' value='{$group['date']}'></input>
 
                                     <tr>
                                         <td align='center' colspan='2'>
-                                            <input name='id' type='hidden' value=".$group['id'].">
-                                            <input class='btn btn-success btn-sm'   type='submit' value='Сохранить'>
+                                            <input id='id' name='id' type='hidden' value=".$group['id'].">
+                                            <a href='' class='btn btn-success btn-sm chanGr'>Сохранить</a>
                                         </td>
                                     </tr>
                         ";

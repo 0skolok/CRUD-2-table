@@ -16,7 +16,6 @@
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
-    <script type="text/javascript" src="<? echo $this->config->base_url_directory()?>script/jquery-migrate-1.4.1.min.js"></script>
     <!-- Java Script -->
     <script type="text/javascript" src="<? echo $this->config->base_url_directory()?>script/global.js"></script>
 </html>
