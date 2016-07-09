@@ -13,7 +13,9 @@ class Config
 
     public function __construct()
     {
-        $this->base_url = "http://project3:81";
+        // адрес, если используется другой порт, указать через двоеточие (http://project_a:8888)
+        $this->base_url = "http://project3"; 
+        // папка по умолчанию (не изменять)
         $this->directory = "public";
     }
 

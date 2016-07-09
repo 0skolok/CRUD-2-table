@@ -16,7 +16,7 @@ $capsule->addConnection(
         'host'         =>       'localhost',
         'username'     =>       'root',
         'password'     =>       '',
-        'database'     =>       'project3',
+        'database'     =>       'db_a',
         'charset'      =>       'utf8',
         'collation'    =>       'utf8_unicode_ci',
         'prefix'    =>       ''
